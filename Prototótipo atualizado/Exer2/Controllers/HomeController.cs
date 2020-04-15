@@ -161,7 +161,7 @@ namespace Exer2.Controllers
                     dc.SaveChanges();
                     ModelState.Clear();
                     _usuario = null;
-                    ViewBag.Message = "Usuário registrado com sucesso.";
+                    ViewBag.Message = "Usuário registrado sucesso.";
                 }
                 else
                 {
