@@ -1,0 +1,68 @@
+﻿@model Exer2.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <body id="body" style="background-color: rgba(0, 0, 0, 0.49);">
+
+
+        <div id="loginz">
+
+            <meta charset="UTF-8" />
+
+
+            <div class="container">
+
+
+                <div class="content">
+                    <!--FORMULÁRIO DE LOGIN-->
+                    <div id="login">
+                        
+                            <h1>Login</h1>
+                            
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.USuario1, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.USuario1, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.USuario1, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> Manter-me logado
+                                        </div>
+
+                                        </div>
+                                        <div>
+                                           
+                                                <input type="submit" value="Logar" />
+                                            
+                                        </div>
+
+                                        <div class="link">
+                                            Ainda não tem conta?
+                                            @Html.ActionLink("Cadastre-se", "cadastro1", "Home") 
+                                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+
+ 
+}
