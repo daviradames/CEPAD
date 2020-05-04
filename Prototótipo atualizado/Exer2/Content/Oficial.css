@@ -670,6 +670,15 @@
     text-align: center;
 }
 
+#tituloResumo1 {
+    color: #83295c;
+    font-family: Arial,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2px 0 10px 0;
+    text-align: justify;
+}
+
 #tituloDescriRes {
     color: #83295c;
     font-family: Arial,sans-serif;
@@ -1514,8 +1523,7 @@ ul.search-description {
 
 
 #pesquisa_bar {
-    width:50%;
-    float:left;
+    width:60%;
     padding-top:5%;
     padding:3%;
     

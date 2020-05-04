@@ -24,7 +24,7 @@ namespace Exer2.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Home");
             }
 
            
@@ -48,8 +48,17 @@ namespace Exer2.Controllers
         // GET: Municipes/Create
         public ActionResult Create()
         {
-            ViewBag.ID_Usuario = new SelectList(db.Usuario, "ID_Usuario", "USuario1");
-            return View();
+
+            if (Session["usuarioLogadoID"] != null)
+            {
+                ViewBag.ID_Usuario = new SelectList(db.Usuario, "ID_Usuario", "USuario1");
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login","Home");
+            }
+            
         }
 
         // POST: Municipes/Create
